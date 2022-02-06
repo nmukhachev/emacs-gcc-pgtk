@@ -1,4 +1,4 @@
-FROM ubuntu:21.10
+FROM debian:bookworm
 WORKDIR /opt
 ENV DEBIAN_FRONTEND=noninteractive
 
