@@ -2,7 +2,16 @@ FROM debian:bookworm
 WORKDIR /opt
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN sed -i 's/# deb-src/deb-src/' /etc/apt/sources.list &&\
+RUN cat << "END"
+    deb http://deb.debian.org/debian bookworm main contrib non-free
+    deb-src http://deb.debian.org/debian bookworm main contrib non-free
+    deb http://deb.debian.org/debian bookworm-updates main contrib non-free
+    deb-src http://deb.debian.org/debian bookworm-updates main contrib non-free
+    deb http://deb.debian.org/debian bookworm-backports main contrib non-free
+    deb-src http://deb.debian.org/debian bookworm-backports main contrib non-free
+    deb http://security.debian.org/debian-security/ bookworm-security main contrib non-free
+    deb-src http://security.debian.org/debian-security/ bookworm-security main contrib non-free
+    END &&\
     apt-get update && apt-get install --yes --no-install-recommends  \
     apt-transport-https\
     ca-certificates\
