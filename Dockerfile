@@ -2,16 +2,15 @@ FROM debian:bookworm
 WORKDIR /opt
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN cat << "END"
-    deb http://deb.debian.org/debian bookworm main contrib non-free
-    deb-src http://deb.debian.org/debian bookworm main contrib non-free
-    deb http://deb.debian.org/debian bookworm-updates main contrib non-free
-    deb-src http://deb.debian.org/debian bookworm-updates main contrib non-free
-    deb http://deb.debian.org/debian bookworm-backports main contrib non-free
-    deb-src http://deb.debian.org/debian bookworm-backports main contrib non-free
-    deb http://security.debian.org/debian-security/ bookworm-security main contrib non-free
-    deb-src http://security.debian.org/debian-security/ bookworm-security main contrib non-free
-    END &&\
+RUN echo 'deb http://deb.debian.org/debian bookworm main contrib non-free\n\
+    deb-src http://deb.debian.org/debian bookworm main contrib non-free\n\
+    deb http://deb.debian.org/debian bookworm-updates main contrib non-free\n\
+    deb-src http://deb.debian.org/debian bookworm-updates main contrib non-free\n\
+    deb http://deb.debian.org/debian bookworm-backports main contrib non-free\n\
+    deb-src http://deb.debian.org/debian bookworm-backports main contrib non-free\n\
+    deb http://security.debian.org/debian-security/ bookworm-security main contrib non-free\n\
+    deb-src http://security.debian.org/debian-security/ bookworm-security main contrib non-free\n'\
+    > /etc/apt/sources.list  &&\
     apt-get update && apt-get install --yes --no-install-recommends  \
     apt-transport-https\
     ca-certificates\
