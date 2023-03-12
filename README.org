@@ -4,7 +4,7 @@
 This repository shows a Dockerfile to create a emacs-29 deb package with native compilation and pure GTK for Ubuntu >=20.04. 
 
 ** Notes:
-1. The deb package can be found in [[https://github.com/konstare/emacs-gcc-pgtk/actions/workflows/deploy.yml?query=is%3Acompleted][GitHub Action]].
+1. The deb package can be found in [[https://github.com/nmukhachev/emacs-gcc-pgtk/actions/workflows/deploy.yml?query=is%3Acompleted][GitHub Action]].
 2. The emacs source files are [[https://git.savannah.gnu.org/cgit/emacs.git/log/?h=emacs-29][here]].
 3. no xwidgets
 4. no imagemagick. Emacs now supports resizing and rotating of images without ImageMagick.
@@ -22,15 +22,15 @@ This repository shows a Dockerfile to create a emacs-29 deb package with native 
 + --with-native-compilation=aot
 + CFLAGS="-O2 -pipe"
 
-* Installation 1: Use [[https://github.com/konstare/emacs-gcc-pgtk/actions][GitHub Actions]]
-The deb package with this recipe is built by =github= every day and can be found in [[https://github.com/konstare/emacs-gcc-pgtk/actions/workflows/deploy.yml?query=is%3Acompleted][GitHub Action]].
+* Installation 1: Use [[https://github.com/nmukhachev/emacs-gcc-pgtk/actions][GitHub Actions]]
+The deb package with this recipe is built by =github= every day and can be found in [[https://github.com/nmukhachev/emacs-gcc-pgtk/actions/workflows/deploy.yml?query=is%3Acompleted][GitHub Action]].
 
 * Installation 2: Compile on your own computer
 ** Requirements
 1. docker
 ** Compilation 
 #+begin_src bash
-git clone https://github.com/konstare/emacs-gcc-pgtk
+git clone https://github.com/nmukhachev/emacs-gcc-pgtk
 cd emacs-gcc-pgtk
 ./build.sh
 #+end_src
