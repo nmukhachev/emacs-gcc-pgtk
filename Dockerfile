@@ -27,7 +27,7 @@ RUN echo 'deb http://deb.debian.org/debian bookworm main contrib non-free\n\
     libotf-dev \
     libsystemd-dev \
     libjansson-dev \
-    libgccjit-11-dev \
+    libgccjit-12-dev \
     libgif-dev \
     librsvg2-dev  \
     libxml2-dev \
