@@ -41,7 +41,6 @@ RUN echo 'deb http://deb.debian.org/debian bookworm main contrib non-free\n\
     texinfo\
     libtree-sitter-dev
 
-RUN mkdir --parents /opt/admin/notes/tree-sitter/build-module
 
 # Clone emacs
 RUN update-ca-certificates \
@@ -65,6 +64,8 @@ RUN ./autogen.sh && ./configure \
 
 
 RUN make -j $(nproc)
+
+# RUN mkdir --parents /opt/admin/notes/tree-sitter/build-module
 
 # Create package
 RUN EMACS_VERSION=$(sed -ne 's/AC_INIT(\[GNU Emacs\], \[\([0-9.]\+\)\], .*/\1/p' configure.ac).$(date +%y.%m.%d.%H) \
