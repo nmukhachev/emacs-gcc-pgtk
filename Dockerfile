@@ -41,6 +41,7 @@ RUN echo 'deb http://deb.debian.org/debian bookworm main contrib non-free\n\
     texinfo\
     libtree-sitter-dev
 
+RUN mkdir --parents /opt/admin/notes/tree-sitter/build-module
 
 # Clone emacs
 RUN update-ca-certificates \
