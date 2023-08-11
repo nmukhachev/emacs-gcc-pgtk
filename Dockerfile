@@ -45,7 +45,7 @@ RUN mkdir --parents /opt/admin/notes/tree-sitter/build-module
 
 # Clone emacs
 RUN update-ca-certificates \
-    && git clone --depth 1 https://git.savannah.gnu.org/git/emacs.git -b emacs-29 emacs \
+    && git clone --depth 1 https://git.savannah.gnu.org/git/emacs.git emacs \
     && mv emacs/* .
 
 # Build
